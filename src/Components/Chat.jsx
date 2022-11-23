@@ -1,9 +1,11 @@
 import React from "react";
 import cam from "../images/camera.png";
 import add from "../images/add.png";
+import Messages from "./Messages";
+import Input from "./Input";
 
 const styles = {
-  chat: "flex-auto bg-white rounded-r-[10px] ",
+  chat: "flex-auto rounded-r-[10px] ",
   chatInfo:
     "flex items-center justify-between h-[50px] p-[10px] bg-blue-400 rounded-tr-[7.8px]",
   chatIcons: "flex gap-2",
@@ -20,6 +22,8 @@ export default function Chat() {
           <img src={add} alt="add friends icon" className={styles.imgIcons} />
         </div>
       </div>
+      <Messages />
+      <Input />
     </div>
   );
 }

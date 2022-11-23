@@ -4,7 +4,7 @@ import userImage from "../images/user.jpg";
 const styles = {
   searchForm: "m-4",
   searchInput:
-    "border-b-2 bg-transparent placeholder-gray-800 text-bold w-[100%]",
+    "border-b-2 bg-transparent placeholder-gray-800 text-bold w-[100%] outline-none text-blue-800",
   userChat: "flex mt-6 pl-4 py-2 gap-4 hover:bg-blue-600",
 };
 
