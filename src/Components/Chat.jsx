@@ -5,7 +5,7 @@ import Messages from "./Messages";
 import Input from "./Input";
 
 const styles = {
-  chat: "flex-auto rounded-r-[10px] ",
+  chat: "flex-[2] rounded-r-[10px] ",
   chatInfo:
     "flex items-center justify-between h-[50px] p-[10px] bg-blue-400 rounded-tr-[7.8px]",
   chatIcons: "flex gap-2",

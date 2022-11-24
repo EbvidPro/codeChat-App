@@ -11,14 +11,14 @@ const styles = {
 export default function Navbar() {
   return (
     <div className={styles.Navbar}>
-      <h1 className="text-lg">
+      <h1 className="text-l lg:block hidden">
         code
-        <span className="text-2xl text-white font-bold">Chat</span>
+        <span className="text-xl text-white font-bold">Chat</span>
       </h1>
       <div className={styles.user}>
         <img src={userImage} alt="user Avatar" className={styles.userImage} />
         <span className="mt-[3px] ml-[5px]">John</span>
-        <button className="ml-2 p-[3px] px-[8px] text-[12px] text-black rounded-2xl bg-blue-400 hover:font-bold hover:text-blue-800 text-white font-md">
+        <button className="ml-2 p-[3px] px-[8px] text-[12px] text-black rounded-2xl bg-blue-400 hover:font-bold hover:text-blue-800 text-white">
           Log Out
         </button>
       </div>

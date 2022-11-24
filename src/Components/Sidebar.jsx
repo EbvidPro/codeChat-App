@@ -5,7 +5,7 @@ import Chats from "./Chats";
 
 const styles = {
   sideBar:
-    "flex-1 text-black border border-blue-200 max-w-[38%] bg-blue-400 rounded-l-[7.8px]",
+    "flex-[1] sm:relative text-black border border-blue-200 bg-blue-400 rounded-l-[7.8px]",
 };
 
 export default function Sidebar() {

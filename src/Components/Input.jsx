@@ -5,7 +5,7 @@ import image from "../images/image.png";
 const styles = {
   input:
     "flex justify-between items-center h-[50px] bg-white p-[10px] text-black rounded-br-[10px]",
-  messageInput: "w-[70%] outline-none text-blue-800 overflow-y-scroll",
+  messageInput: "w-[60%] outline-none text-blue-800 overflow-y-scroll",
   sendButtons: "flex items-center gap-4",
   imgButtons: "w-[20px] h-[20px] object-contain cursor-pointer",
 };
