@@ -4,6 +4,7 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth, storage, db } from "../Firebase";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc, collection } from "firebase/firestore";
+import { useNavigate, Link } from "react-router-dom";
 
 const styles = {
   container: "bg-black h-full py-[10%] ",
@@ -18,6 +19,8 @@ const styles = {
 
 export default function Signup() {
   const [err, setErr] = useState(false);
+  const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const displayName = e.target[0].value;
@@ -69,6 +72,7 @@ export default function Signup() {
               photoURL: downloadURL,
             });
             await setDoc(doc(collection(db, "userChats"), res.user.uid), {});
+            navigate("/home");
           });
         }
       );
@@ -117,13 +121,13 @@ export default function Signup() {
             </span>
           </label>
           <button className={styles.signUp}>Sign Up</button>
-          {err && <span>Something went wrong</span>}
+          {err && <p className="italic">Something went wrong</p>}
         </form>
         <p className="text-sm mt-4 px-8">
           Already have an account?
-          <a className="text-blue-400 hover:font-bold" href="/">
-            Log In
-          </a>
+          <Link className="text-blue-400 hover:font-bold " to="/">
+            Sign in
+          </Link>
         </p>
       </div>
     </div>

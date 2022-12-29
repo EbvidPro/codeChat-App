@@ -1,5 +1,9 @@
 import React from "react";
 import userImage from "../images/user.jpg";
+import { signOut } from "firebase/auth";
+import { auth } from "../Firebase";
+import { useContext } from "react";
+import { AuthContext } from "../context/AuthContext";
 
 const styles = {
   Navbar:
@@ -9,6 +13,7 @@ const styles = {
 };
 
 export default function Navbar() {
+  const { currentUser } = useContext(AuthContext);
   return (
     <div className={styles.Navbar}>
       <h1 className="text-l lg:block hidden">
@@ -16,9 +21,16 @@ export default function Navbar() {
         <span className="text-xl text-white font-bold">Chat</span>
       </h1>
       <div className={styles.user}>
-        <img src={userImage} alt="user Avatar" className={styles.userImage} />
-        <span className="mt-[3px] ml-[5px]">John</span>
-        <button className="ml-2 p-[3px] px-[8px] text-[12px] text-black rounded-2xl bg-blue-400 hover:font-bold hover:text-blue-800 text-white">
+        <img
+          src={currentUser.photoURL}
+          alt="user Avatar"
+          className={styles.userImage}
+        />
+        <span className="mt-[3px] ml-[5px]">{currentUser.displayName}</span>
+        <button
+          onClick={() => signOut(auth)}
+          className="ml-2 p-[3px] px-[8px] text-[12px] text-black rounded-2xl bg-blue-400 hover:font-bold hover:text-blue-800 text-white"
+        >
           Log Out
         </button>
       </div>
